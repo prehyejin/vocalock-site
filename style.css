@@ -1,0 +1,513 @@
+/* 보카락(VocaRock) 공식 웹사이트 공통 스타일 */
+
+:root {
+  --bg: #fcfbf7;
+  --surface: #ffffff;
+  --ink: #26262b;
+  --ink-soft: #5b5b63;
+  --ink-faint: #8a8a93;
+  --line: #e6e3da;
+  --accent: #2f8e72;
+  --accent-soft: #eaf4f0;
+  --radius: 14px;
+  --maxw: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ── 헤더 / 네비게이션 ───────────────────────────── */
+
+.site-header {
+  background: rgba(252, 251, 247, 0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand strong {
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+.brand span {
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+nav.main-nav {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 4px;
+}
+
+nav.main-nav a {
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+nav.main-nav a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+nav.main-nav a[aria-current="page"] {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── 레이아웃 ────────────────────────────────────── */
+
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 36px 20px 64px;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  margin: 40px 0 12px;
+  padding-top: 4px;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 24px 0 8px;
+}
+
+p,
+li {
+  color: var(--ink-soft);
+}
+
+main > p:first-of-type {
+  margin-top: 0;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 36px 0;
+}
+
+strong {
+  color: var(--ink);
+}
+
+code {
+  background: var(--accent-soft);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.9em;
+}
+
+/* ── 문서 헤더(법무 페이지) ──────────────────────── */
+
+.doc-meta {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 20px 0 8px;
+  font-size: 14px;
+}
+
+.doc-meta div {
+  color: var(--ink-soft);
+}
+
+.doc-meta div + div {
+  margin-top: 4px;
+}
+
+/* ── 랜딩 ───────────────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+
+.hero .logo-mark {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 auto 18px;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  font-size: 32px;
+}
+
+.hero .tagline {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin: 10px auto 0;
+  max-width: 30em;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.features {
+  display: grid;
+  gap: 14px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 0;
+}
+
+.features h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.features p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.store-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 190px;
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink-faint);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.store-btn .small {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.store-btn .big {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ── 카드 / 강조 박스 ───────────────────────────── */
+
+.callout {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.callout p {
+  margin: 0;
+}
+
+.callout p + p {
+  margin-top: 8px;
+}
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 14px 18px 14px 54px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── FAQ ────────────────────────────────────────── */
+
+.faq {
+  margin: 18px 0;
+}
+
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 18px;
+  margin-bottom: 10px;
+}
+
+.faq summary {
+  cursor: pointer;
+  padding: 15px 0;
+  font-weight: 600;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq details > *:not(summary) {
+  margin-top: 0;
+  padding-bottom: 4px;
+}
+
+.faq details > *:last-child {
+  padding-bottom: 18px;
+}
+
+/* ── 표 ─────────────────────────────────────────── */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 460px;
+  font-size: 14.5px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+
+th {
+  background: #f6f4ee;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ── 미기입 항목 표시 ───────────────────────────── */
+
+.ph {
+  color: #a8862c;
+  border-bottom: 1px dashed #cbab52;
+  font-style: normal;
+}
+
+/* ── 푸터 ───────────────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #f6f4ee;
+}
+
+.site-footer .inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  line-height: 1.9;
+}
+
+.site-footer .biz {
+  margin: 0 0 14px;
+}
+
+.site-footer .biz b {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.site-footer .sep {
+  color: var(--line);
+  margin: 0 6px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 13px;
+  padding-right: 12px;
+  margin-right: 12px;
+  border-right: 1px solid var(--line);
+}
+
+.footer-links a:last-child {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+  .hero h1 {
+    font-size: 27px;
+  }
+  main {
+    padding: 28px 18px 52px;
+  }
+  .store-btn {
+    min-width: 100%;
+  }
+}
